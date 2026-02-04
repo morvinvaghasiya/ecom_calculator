@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecom Profit & Loss Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <p class="app__eyebrow">Monthly Profit & Loss</p>
+        <h1>Ecom Marketplace Calculator</h1>
+        <p class="app__subtext">
+          Meesho, Amazon, Flipkart, Snapdeal ke monthly returns, orders, commission, salary, expenses ko track
+          karke turant profit/loss dekhiye.
+        </p>
+      </header>
+
+      <section class="summary">
+        <div>
+          <p class="summary__label">Total Net Sales</p>
+          <p class="summary__value" id="totalNetSales">₹0</p>
+        </div>
+        <div>
+          <p class="summary__label">Total Expenses</p>
+          <p class="summary__value" id="totalExpenses">₹0</p>
+        </div>
+        <div>
+          <p class="summary__label">Total Profit/Loss</p>
+          <p class="summary__value summary__value--highlight" id="totalProfit">₹0</p>
+        </div>
+      </section>
+
+      <section class="grid" id="platformGrid">
+        <article class="card" data-platform="Meesho">
+          <div class="card__header">
+            <h2>Meesho</h2>
+            <span class="pill">Marketplace</span>
+          </div>
+          <form class="card__form">
+            <label>
+              Monthly Orders (₹)
+              <input type="number" min="0" placeholder="e.g. 120000" data-field="orders" />
+            </label>
+            <label>
+              Monthly Returns (₹)
+              <input type="number" min="0" placeholder="e.g. 8000" data-field="returns" />
+            </label>
+            <label>
+              Commission (₹)
+              <input type="number" min="0" placeholder="e.g. 10000" data-field="commission" />
+            </label>
+            <label>
+              Employee Salary (₹)
+              <input type="number" min="0" placeholder="e.g. 15000" data-field="salary" />
+            </label>
+            <label>
+              Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 5000" data-field="expense" />
+            </label>
+            <label>
+              Other Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 2500" data-field="other" />
+            </label>
+          </form>
+          <div class="card__footer">
+            <div>
+              <p class="card__label">Net Sales</p>
+              <p class="card__value" data-output="netSales">₹0</p>
+            </div>
+            <div>
+              <p class="card__label">Profit/Loss</p>
+              <p class="card__value card__value--highlight" data-output="profit">₹0</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-platform="Amazon">
+          <div class="card__header">
+            <h2>Amazon</h2>
+            <span class="pill">Marketplace</span>
+          </div>
+          <form class="card__form">
+            <label>
+              Monthly Orders (₹)
+              <input type="number" min="0" placeholder="e.g. 200000" data-field="orders" />
+            </label>
+            <label>
+              Monthly Returns (₹)
+              <input type="number" min="0" placeholder="e.g. 12000" data-field="returns" />
+            </label>
+            <label>
+              Commission (₹)
+              <input type="number" min="0" placeholder="e.g. 18000" data-field="commission" />
+            </label>
+            <label>
+              Employee Salary (₹)
+              <input type="number" min="0" placeholder="e.g. 20000" data-field="salary" />
+            </label>
+            <label>
+              Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 8000" data-field="expense" />
+            </label>
+            <label>
+              Other Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 4000" data-field="other" />
+            </label>
+          </form>
+          <div class="card__footer">
+            <div>
+              <p class="card__label">Net Sales</p>
+              <p class="card__value" data-output="netSales">₹0</p>
+            </div>
+            <div>
+              <p class="card__label">Profit/Loss</p>
+              <p class="card__value card__value--highlight" data-output="profit">₹0</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-platform="Flipkart">
+          <div class="card__header">
+            <h2>Flipkart</h2>
+            <span class="pill">Marketplace</span>
+          </div>
+          <form class="card__form">
+            <label>
+              Monthly Orders (₹)
+              <input type="number" min="0" placeholder="e.g. 150000" data-field="orders" />
+            </label>
+            <label>
+              Monthly Returns (₹)
+              <input type="number" min="0" placeholder="e.g. 9000" data-field="returns" />
+            </label>
+            <label>
+              Commission (₹)
+              <input type="number" min="0" placeholder="e.g. 14000" data-field="commission" />
+            </label>
+            <label>
+              Employee Salary (₹)
+              <input type="number" min="0" placeholder="e.g. 12000" data-field="salary" />
+            </label>
+            <label>
+              Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 6000" data-field="expense" />
+            </label>
+            <label>
+              Other Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 3500" data-field="other" />
+            </label>
+          </form>
+          <div class="card__footer">
+            <div>
+              <p class="card__label">Net Sales</p>
+              <p class="card__value" data-output="netSales">₹0</p>
+            </div>
+            <div>
+              <p class="card__label">Profit/Loss</p>
+              <p class="card__value card__value--highlight" data-output="profit">₹0</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-platform="Snapdeal">
+          <div class="card__header">
+            <h2>Snapdeal</h2>
+            <span class="pill">Marketplace</span>
+          </div>
+          <form class="card__form">
+            <label>
+              Monthly Orders (₹)
+              <input type="number" min="0" placeholder="e.g. 90000" data-field="orders" />
+            </label>
+            <label>
+              Monthly Returns (₹)
+              <input type="number" min="0" placeholder="e.g. 5000" data-field="returns" />
+            </label>
+            <label>
+              Commission (₹)
+              <input type="number" min="0" placeholder="e.g. 7000" data-field="commission" />
+            </label>
+            <label>
+              Employee Salary (₹)
+              <input type="number" min="0" placeholder="e.g. 9000" data-field="salary" />
+            </label>
+            <label>
+              Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 3000" data-field="expense" />
+            </label>
+            <label>
+              Other Expense (₹)
+              <input type="number" min="0" placeholder="e.g. 2000" data-field="other" />
+            </label>
+          </form>
+          <div class="card__footer">
+            <div>
+              <p class="card__label">Net Sales</p>
+              <p class="card__value" data-output="netSales">₹0</p>
+            </div>
+            <div>
+              <p class="card__label">Profit/Loss</p>
+              <p class="card__value card__value--highlight" data-output="profit">₹0</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
